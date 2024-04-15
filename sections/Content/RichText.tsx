@@ -12,7 +12,8 @@ export default function RichText(
   { text = DEFAULT_TEXT, containerWidth }: Props,
 ) {
   return (
-    <div class={`w-11/12 mx-auto lg:container lg:text-start text-center`}
+    <div
+      class={`w-11/12 mx-auto lg:container lg:text-start text-center`}
       dangerouslySetInnerHTML={{ __html: text }}
     >
     </div>
