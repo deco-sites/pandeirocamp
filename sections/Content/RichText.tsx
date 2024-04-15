@@ -12,12 +12,8 @@ export default function RichText(
   { text = DEFAULT_TEXT, containerWidth }: Props,
 ) {
   return (
-    <div
+    <div class={`w-11/12 mx-auto lg:container lg:text-start text-center`}
       dangerouslySetInnerHTML={{ __html: text }}
-      style={{
-        maxWidth: containerWidth ? containerWidth : 1440,
-        margin: "0 auto",
-      }}
     >
     </div>
   );
