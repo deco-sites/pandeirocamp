@@ -56,6 +56,8 @@ import * as $$$$$$44 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$45 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$46 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$47 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$48 from "./sections/Weather/BtnTempo.tsx";
+import * as $$$$$$49 from "./sections/Weather/Tempo.tsx";
 
 const manifest = {
   "loaders": {
@@ -118,6 +120,8 @@ const manifest = {
     "deco-sites/pandeirocamp/sections/Social/InstagramPosts.tsx": $$$$$$45,
     "deco-sites/pandeirocamp/sections/Social/WhatsApp.tsx": $$$$$$46,
     "deco-sites/pandeirocamp/sections/Theme/Theme.tsx": $$$$$$47,
+    "deco-sites/pandeirocamp/sections/Weather/BtnTempo.tsx": $$$$$$48,
+    "deco-sites/pandeirocamp/sections/Weather/Tempo.tsx": $$$$$$49,
   },
   "apps": {
     "deco-sites/pandeirocamp/apps/decohub.ts": $$$$$$$$$$$0,
