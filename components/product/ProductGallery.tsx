@@ -1,9 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { PageInfo, Product } from "apps/commerce/types.ts";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
-import ProductCard, {
-  Layout as CardLayout,
-} from "../../components/product/ProductCard.tsx";
+import HorizontalProductCard from "../../components/product/HorizontalProductCard.tsx";
 import { Format } from "../../components/search/SearchResult.tsx";
 import Spinner from "../../components/ui/Spinner.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
@@ -19,11 +17,11 @@ export interface Props {
   pageInfo: PageInfo;
   offset: number;
   layout?: {
-    card?: CardLayout;
     columns?: Columns;
     format?: Format;
   };
   url: URL;
+  animateImage: boolean;
 }
 
 const MOBILE_COLUMNS = {
@@ -39,7 +37,7 @@ const DESKTOP_COLUMNS = {
 };
 
 function ProductGallery(
-  { products, pageInfo, layout, offset, url }: Props,
+  { products, pageInfo, layout, offset, url, animateImage }: Props,
 ) {
   const platform = usePlatform();
   const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
@@ -67,13 +65,10 @@ function ProductGallery(
       )}
 
       {products?.map((product, index) => (
-        <ProductCard
-          key={`product-card-${product.productID}`}
+        <HorizontalProductCard
           product={product}
-          preload={index === 0}
-          index={offset + index}
-          layout={layout?.card}
-          platform={platform}
+          index={index}
+          animateImage={animateImage}
         />
       ))}
 

@@ -30,7 +30,7 @@ export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
   layout?: Layout;
-  cardLayout?: CardLayout;
+  animateImage: boolean;
 
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
@@ -47,7 +47,7 @@ function NotFound() {
 function Result({
   page,
   layout,
-  cardLayout,
+  animateImage,
   startingPage = 0,
   url: _url,
 }: Omit<Props, "page"> & {
@@ -91,9 +91,10 @@ function Result({
             <ProductGallery
               products={products}
               offset={offset}
-              layout={{ card: cardLayout, columns: layout?.columns, format }}
+              layout={{ columns: layout?.columns, format }}
               pageInfo={pageInfo}
               url={url}
+              animateImage={animateImage}
             />
           </div>
         </div>
