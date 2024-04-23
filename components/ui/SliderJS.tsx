@@ -98,7 +98,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     slider.scrollTo({
       top: 0,
       behavior: scroll,
-      left: item.offsetLeft - root.offsetLeft,
+      left: item.offsetLeft,
     });
   };
 

@@ -14,6 +14,7 @@ import Image from "apps/website/components/Image.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import { Buttons, Logo } from "../../components/header/Header.tsx";
+import MyLikes from "deco-sites/pandeirocamp/islands/AllVotes.tsx";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
@@ -35,7 +36,10 @@ function Navbar(
         style={{ height: navbarHeight }}
         class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
       >
-        <MenuButton />
+        <div class={`flex items-center gap-4`}>
+          <MenuButton />
+          <MyLikes />
+        </div>
         {logo && (
           <a
             href="/"
@@ -96,6 +100,7 @@ function Navbar(
         )}
       </div>
       <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+        <MyLikes />
         {!buttons?.hideSearchButton && (
           <div class="flex items-center text-xs font-thin gap-1">
             <SearchButton />SEARCH

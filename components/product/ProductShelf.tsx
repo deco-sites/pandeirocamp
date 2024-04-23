@@ -1,7 +1,5 @@
 import { SendEventOnView } from "../../components/Analytics.tsx";
-import ProductCard, {
-  Layout as cardLayout,
-} from "../../components/product/ProductCard.tsx";
+import HorizontalProductCard from "../../components/product/HorizontalProductCard.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Header from "../../components/ui/SectionHeader.tsx";
 import Slider from "../../components/ui/Slider.tsx";
@@ -26,7 +24,7 @@ export interface Props {
     headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
   };
-  cardLayout?: cardLayout;
+  animateImage: boolean;
 }
 
 function ProductShelf({
@@ -34,7 +32,7 @@ function ProductShelf({
   title,
   description,
   layout,
-  cardLayout,
+  animateImage,
 }: Props) {
   const id = useId();
   const platform = usePlatform();
@@ -74,7 +72,7 @@ function ProductShelf({
           "px-0 md:px-5 container",
         )}
       >
-        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5">
+        <Slider class="carousel carousel-center sm:carousel-end row-start-2 row-end-5">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
@@ -84,12 +82,10 @@ function ProductShelf({
                 slideMobile[layout?.numberOfSliders?.mobile ?? 1],
               )}
             >
-              <ProductCard
+              <HorizontalProductCard
                 product={product}
-                itemListName={title}
-                layout={cardLayout}
-                platform={platform}
                 index={index}
+                animateImage={animateImage}
               />
             </Slider.Item>
           ))}
