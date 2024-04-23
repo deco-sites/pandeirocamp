@@ -12,8 +12,8 @@ export interface Props {
 export default function BtnProductVote({ productId }: Props) {
   const votes = useSignal<number>(0);
   const clicked = useSignal(false);
-    //deno-lint-ignore no-explicit-any
-    const ToastContainerComponent = ToastContainer as any;
+  //deno-lint-ignore no-explicit-any
+  const ToastContainerComponent = ToastContainer as any;
 
   useSignalEffect(() => {
     async function addVote() {
@@ -26,19 +26,19 @@ export default function BtnProductVote({ productId }: Props) {
       if (response) {
         votes.value = response.product;
       }
-        toast.success("Voto contabilizado! Obrigado!", {
-          toastId: `btn-vote-${productId}`,
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          icon: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Bounce,
-        });
+      toast.success("Voto contabilizado! Obrigado!", {
+        toastId: `btn-vote-${productId}`,
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        icon: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
 
       sendScoreEvent({
         name: "post_score",
@@ -76,7 +76,7 @@ export default function BtnProductVote({ productId }: Props) {
         : <Icon id="moodCheck" size={24} />}
       <span class="font-bold text-sm">{votes.value} Votos</span>
       <ToastContainerComponent />
-      <ToastCss/>
+      <ToastCss />
     </div>
   );
 }
