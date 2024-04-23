@@ -54,3 +54,7 @@
     --dot-progress: 100%
   }
 }
+
+.Toastify__toast-container--top-right{
+  top: 150px !important
+}
