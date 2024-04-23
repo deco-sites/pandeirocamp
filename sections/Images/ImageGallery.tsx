@@ -156,7 +156,7 @@ function Banner(
         />
         <img
           width={640}
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover object-bottom"
           src={srcMobile}
           alt={alt}
           decoding="async"
@@ -194,7 +194,7 @@ export default function Gallery(props: Props) {
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <ul class="grid grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
+      <ul class="grid h-[65vh] w-11/12 mx-auto lg:h-[80vh] grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
         {banners?.map((banner, index) => (
           <li class={`${mobileItemLayout(index)} ${desktopItemLayout(index)}`}>
             <Banner {...banner} borderRadius={props.layout?.borderRadius} />
