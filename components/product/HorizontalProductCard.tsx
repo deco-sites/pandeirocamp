@@ -19,7 +19,7 @@ const HEIGHT = 300;
 export function ErrorFallback({ error }: { error?: Error }) {
   return (
     <div class="flex flex-col mx-auto max-w-96 py-4 gap-2">
-      <img
+      <Image
         src={asset("/image/acaraje.png")}
         class="object-cover"
         alt={"Acarajé"}

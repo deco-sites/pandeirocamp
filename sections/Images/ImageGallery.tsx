@@ -160,7 +160,8 @@ function Banner(
           src={srcMobile}
           alt={alt}
           decoding="async"
-          loading="lazy"
+          loading="eager"
+          preload={"true"}
         />
       </Picture>
     </a>

@@ -49,7 +49,7 @@ export default function HeroFlats({
               src={image}
               alt={image}
               decoding="async"
-              loading="lazy"
+              loading="eager"
             />
           )}
           <div
