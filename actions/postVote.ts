@@ -24,4 +24,3 @@ const loader = async (props: Props): Promise<Result | null> => {
 };
 
 export default loader;
-  

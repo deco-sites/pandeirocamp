@@ -20,7 +20,6 @@ effect(() => {
 });
 
 export default function AllVotes() {
-
   return (
     <div class="flex flex-row gap-2">
       <Icon id="Friends" size={24} />

@@ -75,7 +75,7 @@ export default function HorizontalProductCard(
   return (
     <div class="w-full h-auto lg:px-2">
       <div class="w-full flex p-3 lg:p-5 relative border rounded-2xl border-gray-300">
-      <BtnProductVote productId={productID} />
+        <BtnProductVote productId={productID} />
         <a href={url} class={`overflow-hidden lg:w-[30%]`}>
           <Image
             src={front.url!}

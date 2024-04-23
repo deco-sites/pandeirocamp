@@ -18,4 +18,3 @@ const loader = async (): Promise<Result | null> => {
 };
 
 export default loader;
-  

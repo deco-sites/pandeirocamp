@@ -7,7 +7,8 @@ interface Props {
 }
 
 const loader = async (props: Props): Promise<Result> => {
-  const response = await fetch(`https://camp-api.deco.cx/event/${props.productId}`,
+  const response = await fetch(
+    `https://camp-api.deco.cx/event/${props.productId}`,
     {
       method: "GET",
       headers: {
@@ -20,4 +21,3 @@ const loader = async (props: Props): Promise<Result> => {
 };
 
 export default loader;
-  

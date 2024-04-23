@@ -12,30 +12,32 @@ export interface Props {
 export default function BtnProductVote({ productId }: Props) {
   const votes = useSignal<number>(0);
   const clicked = useSignal(false);
-//   const ToastContainerComponent = ToastContainer as any;
+  //   const ToastContainerComponent = ToastContainer as any;
 
   useSignalEffect(() => {
     async function addVote() {
-      const response = await invoke["deco-sites/pandeirocamp"].actions.postVote({
+      const response = await invoke["deco-sites/pandeirocamp"].actions.postVote(
+        {
           productId: productId,
-      });
+        },
+      );
       allVotes.value++;
-      console.log("aceeee")
+      console.log("aceeee");
       if (response) {
         votes.value = response.product;
       }
-    //   toast.success("Obrigado por votar! 🤝", {
-    //     position: "top-right",
-    //     autoClose: 5000,
-    //     hideProgressBar: false,
-    //     icon: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "colored",
-    //     transition: Bounce,
-    //   });
+      //   toast.success("Obrigado por votar! 🤝", {
+      //     position: "top-right",
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     icon: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //     theme: "colored",
+      //     transition: Bounce,
+      //   });
 
       sendScoreEvent({
         name: "post_score",
@@ -46,7 +48,9 @@ export default function BtnProductVote({ productId }: Props) {
     }
 
     async function getVotes() {
-      const result = await invoke["deco-sites/pandeirocamp"].loaders.getVotes({ productId: productId });
+      const result = await invoke["deco-sites/pandeirocamp"].loaders.getVotes({
+        productId: productId,
+      });
       votes.value = result?.product ?? 0;
     }
     setInterval(() => {
@@ -61,7 +65,10 @@ export default function BtnProductVote({ productId }: Props) {
   });
 
   return (
-    <div onClick={() => clicked.value = true} class="cursor-pointer flex flex-row gap-2 items-center absolute bottom-2 lg:bottom-auto lg:top-3 left-3 z-10 bg-secondary px-1 py-1 rounded">
+    <div
+      onClick={() => clicked.value = true}
+      class="cursor-pointer flex flex-row gap-2 items-center absolute bottom-2 lg:bottom-auto lg:top-3 left-3 z-10 bg-secondary px-1 py-1 rounded"
+    >
       {!clicked.value
         ? <Icon id="moodSmile" size={24} />
         : <Icon id="moodCheck" size={24} />}

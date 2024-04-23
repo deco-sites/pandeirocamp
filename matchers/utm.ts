@@ -21,5 +21,6 @@ export default function Utm(props: Props, ctx: MatchContext): boolean {
   const parameters = extractQueryParameters(ctx.request.url);
 
   // Verifica se utmcampaign está presente nos parâmetros e é igual ao campaignName
-  return !!parameters?.utmcampaign && parameters.utmcampaign === props.campaignName;
+  return !!parameters?.utmcampaign &&
+    parameters.utmcampaign === props.campaignName;
 }
