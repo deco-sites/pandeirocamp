@@ -1,10 +1,11 @@
 import type { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { formatPrice } from "../../sdk/format.ts";
-import { useOffer } from "../../sdk/useOffer.ts";
+import { formatPrice } from "deco-sites/pandeirocamp/sdk/format.ts";
+import { useOffer } from "deco-sites/pandeirocamp/sdk/useOffer.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
+import AddToCartButtonVTEX from "deco-sites/pandeirocamp/islands/AddToCartButton/vtex.tsx";
 import { asset } from "$fresh/runtime.ts";
+import BtnProductVote from "deco-sites/pandeirocamp/islands/BtnProductVote.tsx";
 
 export interface Props {
   product?: Product;
@@ -73,7 +74,8 @@ export default function HorizontalProductCard(
   const { listPrice, price, seller = "1" } = useOffer(offers);
   return (
     <div class="w-full h-auto lg:px-2">
-      <div class="w-full flex p-3 lg:p-5 border rounded-2xl border-gray-300">
+      <div class="w-full flex p-3 lg:p-5 relative border rounded-2xl border-gray-300">
+      <BtnProductVote productId={productID} />
         <a href={url} class={`overflow-hidden lg:w-[30%]`}>
           <Image
             src={front.url!}

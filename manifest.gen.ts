@@ -2,12 +2,16 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/postVote.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
-import * as $$$3 from "./loaders/icons.ts";
+import * as $$$3 from "./loaders/getAllVotes.ts";
+import * as $$$4 from "./loaders/getVotes.ts";
+import * as $$$5 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$1 from "./loaders/List/Sections.tsx";
+import * as $$$$$$$0 from "./matchers/utm.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/Cards/IconCardsCarousel.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarouselWithImage.tsx";
@@ -64,7 +68,9 @@ import * as $$$$$$51 from "./sections/Weather/Tempo.tsx";
 const manifest = {
   "loaders": {
     "deco-sites/pandeirocamp/loaders/availableIcons.ts": $$$2,
-    "deco-sites/pandeirocamp/loaders/icons.ts": $$$3,
+    "deco-sites/pandeirocamp/loaders/getAllVotes.ts": $$$3,
+    "deco-sites/pandeirocamp/loaders/getVotes.ts": $$$4,
+    "deco-sites/pandeirocamp/loaders/icons.ts": $$$5,
     "deco-sites/pandeirocamp/loaders/Layouts/ProductCard.tsx": $$$0,
     "deco-sites/pandeirocamp/loaders/List/Sections.tsx": $$$1,
   },
@@ -127,6 +133,12 @@ const manifest = {
     "deco-sites/pandeirocamp/sections/Theme/Theme.tsx": $$$$$$49,
     "deco-sites/pandeirocamp/sections/Weather/BtnTempo.tsx": $$$$$$50,
     "deco-sites/pandeirocamp/sections/Weather/Tempo.tsx": $$$$$$51,
+  },
+  "matchers": {
+    "deco-sites/pandeirocamp/matchers/utm.ts": $$$$$$$0,
+  },
+  "actions": {
+    "deco-sites/pandeirocamp/actions/postVote.ts": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/pandeirocamp/apps/decohub.ts": $$$$$$$$$$$0,

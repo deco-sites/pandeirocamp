@@ -4,3 +4,15 @@ export const sendEvent = <E extends AnalyticsEvent>(event: E) => {
   console.log(JSON.stringify(event, null, 2));
   globalThis.window.DECO.events.dispatch(event);
 };
+
+export interface EventScore {
+  name: string;
+  params: {
+    score: number;
+  };
+}
+
+export const sendScoreEvent = (event: EventScore) => {
+  console.log(JSON.stringify(event, null, 2));
+  globalThis.window.DECO.events.dispatch(event);
+};
