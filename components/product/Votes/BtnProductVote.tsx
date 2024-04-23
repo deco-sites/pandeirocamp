@@ -69,7 +69,7 @@ export default function BtnProductVote({ productId }: Props) {
     <div
       onClick={() => clicked.value = true}
       id={`btn-vote-${productId}`}
-      class="cursor-pointer flex flex-row gap-2 items-center absolute bottom-2 lg:bottom-auto lg:top-3 left-3 z-10 bg-secondary px-1 py-1 rounded"
+      class="cursor-pointer flex flex-row gap-2 items-center absolute bottom-2 left-3 z-10 lg:left-auto lg:right-2 bg-secondary px-1 py-1 rounded"
     >
       {!clicked.value
         ? <Icon id="moodSmile" size={24} />
